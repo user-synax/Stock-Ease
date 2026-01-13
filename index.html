@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Ease - Manage Your Stock Inventory with ease</title>
+    <link rel="stylesheet" href="/Css/style.css">
+    <!-- ----------------------------- Font Awesome ----------------------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- ------------------------------ Tippy Css ------------------------------ -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+
+    <!-- ---------------------------- Snackbar Css ----------------------------- -->
+    <link rel="stylesheet" href="/Libs/SnackBar-master/dist/snackbar.min.css">
+
+
+    <link rel="shortcut icon" href="/Assets/images/logo.png" type="image/x-icon">
+</head>
+<div class="cursor" id="cursor"></div>
+
+<body>
+    <!-- ------------------------------- Destop Navbar -------------------------------- -->
+    <nav>
+        <div class="logo">
+            <h1>
+                <span class="logo-event" id="logo-event">Stock</span>
+                <span class="logo-lab" id="logo-lab">Ease</span>
+            </h1>
+        </div>
+        <div class="links">
+            <a href="/index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#solution">Working</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="cta">
+            <a href="./Auth/Sign-up/signup.html">
+                Create Account
+            </a>
+        </div>
+        <div class="mobile-nav-icon">
+            <i class="fa-solid fa-bars" onclick="openMobileMenu()"></i>
+        </div>
+    </nav>
+    <!-- ----------------------------- Mobile Navbar ------------------------------ -->
+    <div class="mobile-menu" id="mobileNav">
+        <div class="icon"><i class="fa-solid fa-x" onclick="closeMobileMenu()"></i></div>
+        <div class="links">
+            <a href="/index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#solution">Working</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="cta">
+            <a href="./Auth/Sign-up/signup.html">
+                Create Account
+            </a>
+        </div>
+    </div>
+
+    <!-- ---------------------------- Main Hero ----------------------------- -->
+    <main class="hero">
+        <div class="absolute -z-1 h-full w-full bg-slate-950">
+            <div
+                class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#111_1px,transparent_1px),linear-gradient(to_bottom,#111_1px,transparent_1px)] bg-[size:14px_24px]">
+            </div>
+        </div>
+        <div class="hero-section">
+            <div class="text">
+                <h1>Manage Your Inventory. <br> Track Sales. Maximize Profit.</h1>
+            </div>
+            <p>
+                Stock Ease is a simple inventory management system for small businesses and learners — <span
+                    class="highlighted-localstorage"> no server, no complexity.</span> no worries about Data Breach
+                <span><i class="fa-solid fa-lock"></i></span>
+            </p>
+            <div class="buttons">
+                <button class="cta-button" onclick="location.href='./Auth/Sign-up/signup.html'">Get
+                    Started</button>
+                <button class="learn-more-button">Learn More</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- ---------------------------- About Section ---------------------------- -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+
+                <div class="about-image">
+                    <div class="image-overlay"></div>
+                    <img src="./Assets/SVG/About us page-pana.svg" alt="Workspace">
+                </div>
+
+                <div class="about-content">
+                    <span class="subtitle">...</span>
+                    <h2>What Is <br><span class="highlight">Stock Ease?</span></h2>
+                    <p>
+                        Stock Ease is a local inventory management web application that helps you manage products, track
+                        stock levels, record sales, and calculate profit — all in one place.
+                    </p>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="number"><i class="fa-solid fa-lock" id="lock-icon"></i></span>
+                            <!-- <span class="label"></span> -->
+                        </div>
+                        <div class="stat-item">
+                            <span class="number"><i class="fa-solid fa-wand-magic-sparkles" id="magic-icon"></i></span>
+                            <!-- <span class="label">Dynamic</span> -->
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn-primary" onclick="location.href='./Auth/Sign-up/signup.html'">Create
+                        Account</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------- Solution Section --------------------------- -->
+
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="solution-header">
+                <span class="subtitle">Why Stock Ease?</span>
+                <h2>Stop struggling, <span class="highlight">start growing.</span></h2>
+                <p>Business manage karna mushkil nahi hona chahiye. See how we fix your daily headaches.</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card problem">
+                    <h3>Old Way of Working</h3>
+                    <ul class="solution-list">
+                        <li>
+                            <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                            <p>Manual stock tracking (Register aur Pen ka chakkar)</p>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                            <p>Stock khatam hone ka pata late chalta hai</p>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
+                            <p>Profit calculation confusing hoti hai</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="solution-card solution">
+                    <div class="popular-badge">Recommended</div>
+                    <h3>The Stock Ease Way</h3>
+                    <ul class="solution-list">
+                        <li>
+                            <span class="icon"><i class="fa-solid fa-check"></i></span>
+                            <p>Organized product management</p>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa-solid fa-check"></i></span>
+                            <p>Smart low-stock alerts (Auto Notifications)</p>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa-solid fa-check"></i></span>
+                            <p>Automatic profit calculation in one click</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="solution-footer">
+                <p>Ready to upgrade your business?</p>
+                <a href="#" class="btn-primary" onclick="location.href='./Auth/Sign-up/signup.html'">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------- Features Section --------------------------- -->
+
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="features-header">
+                <span class="badge">Core Features</span>
+                <h2>Powering your business <br> behind the scenes.</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-box"></i></div>
+                    <h3>Product Management</h3>
+                    <p>Easily add, edit, and track every item in your inventory.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-check-double"></i></div>
+                    <h3>Category Management</h3>
+                    <p>Group your products to find exactly what you need in seconds.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bell"></i></div>
+                    <h3>Stock Level Alerts</h3>
+                    <p>Get notified before you run out. Never lose a sale again.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h3>Sales Tracking</h3>
+                    <p>Monitor daily sales and identify your best-selling items.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <h3>Profit Calculation</h3>
+                    <p>Real-time insights into your earnings without the math stress.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Works Offline</h3>
+                    <p>Data stays safe in your browser. No internet? No problem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------- Contact Section --------------------------- -->
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+
+                <div class="contact-info">
+                    <span class="badge">Contact</span>
+                    <h2>Got questions? <br><span class="highlight">Let’s talk shop.</span></h2>
+                    <p>Whether you're stuck on manual tracking or want to scale your business, our team is here to help.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="method-item">
+                            <span class="method-icon">📧</span>
+                            <div>
+                                <strong>Email us</strong>
+                                <p>user-synax@proton.me</p>
+                            </div>
+                        </div>
+                        <div class="method-item">
+                            <span class="method-icon">📱</span>
+                            <div>
+                                <strong>WhatsApp Support</strong>
+                                <p>+91 8826******</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <form action="#">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Business Email</label>
+                            <input type="email" placeholder="name@company.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Your Message</label>
+                            <textarea rows="4" placeholder="How can Stock Ease help you?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ------------------------------- Footer -------------------------------- -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <div class="logo">📦 Stock Ease</div>
+                    <p class="brand-description">
+                        Making business management simple, fast, and accessible for everyone.
+                        Alvida manual registers, welcome to the future.
+                    </p>
+                    <div class="social-links">
+                        <a class="social-icon" id="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a class="social-icon" id="telegram"><i class="fa-brands fa-telegram"></i></a>
+                        <a class="social-icon" id="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="social-icon" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#solution">Working</a></li>
+                        <li><a href="#features">Features</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a
+                                onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">Help
+                                Center</a></li>
+                        <li><a
+                                onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">WhatsApp
+                                Support</a></li>
+                        <li><a
+                                onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">Privacy
+                                Policy</a></li>
+                        <li><a
+                                onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">Terms
+                                of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stock Ease. Built with ❤️ for better business.</p>
+                <div class="footer-bottom-links">
+                    <span>Developed by [ Ayush ]</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
+    <script src="/JavaScript/script.js"></script>
+</body>
+
+</html>
