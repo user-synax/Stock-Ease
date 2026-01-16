@@ -4,7 +4,7 @@ window.addEventListener("mousemove", (e) => {
     gsap.to("#cursor", {
         left: `${e.clientX}px`,
         top: `${e.clientY}px`,
-        ease: 'power3.out'
+        ease: 'elastic.out'
     })
 })
 
@@ -31,11 +31,6 @@ tippy('#magic-icon', {
     followCursor: true,
     theme: 'material'
 });
-
-facebook
-telegram
-instagram
-linkedin
 
 tippy('#facebook', {
     content: 'Facebook',
@@ -64,4 +59,9 @@ tippy('#linkedin', {
     animation: 'scale',
     followCursor: true,
     theme: 'material'
+});
+
+// Initialize Lenis
+const lenis = new Lenis({
+    autoRaf: true,
 });

@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="/Assets/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="/Libs/SnackBar-master/dist/snackbar.min.css">
 </head>
 
 <body>
@@ -74,6 +75,10 @@
                 </svg>
                 <span>Settings</span>
             </a>
+            <a class="menu-item" id="logout-tab" data-tooltip="Settings">
+                <i class="fa-solid fa-arrow-right-from-bracket" style="transform: rotate(180deg);"></i> &nbsp; &nbsp;
+                <span>Log Out</span>
+            </a>
         </nav>
     </aside>
 
@@ -103,7 +108,7 @@
             </div>
         </header>
 
-        <!-- Content -->
+        <!-- Quick Preview Grid -->
         <div class="content">
             <h1 class="page-title">Overview</h1>
             <button class="add-product-button" id="add-product-button">Add New Product</button>
@@ -114,7 +119,7 @@
                     <div class="stat-card-header">
                         <span class="stat-label">Products</span>
                     </div>
-                    <div class="stat-value" id="products-count">00</div>
+                    <div class="stat-value" id="products-count">0</div>
                     <div class="stat-change positive" id="product-stat">Total : [ 0 ]</div>
                 </div>
 
@@ -122,15 +127,15 @@
                     <div class="stat-card-header">
                         <span class="stat-label">Inventory Value</span>
                     </div>
-                    <div class="stat-value" id="Inventory-value">$00</div>
-                    <div class="stat-change positive" id="Inventory-stat">Nothing</div>
+                    <div class="stat-value" id="Inventory-value">₹0</div>
+                    <div class="stat-change positive" id="Inventory-stat">Please add products to Calculate</div>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-card-header">
                         <span class="stat-label">Low Stock Items</span>
                     </div>
-                    <div class="stat-value" id="low-stock-count">00</div>
+                    <div class="stat-value" id="low-stock-count">0</div>
                     <div class="stat-change positive" id="low-stock-stat">None</div>
                 </div>
 
@@ -138,21 +143,107 @@
                     <div class="stat-card-header">
                         <span class="stat-label">Out of Stock</span>
                     </div>
-                    <div class="stat-value" id="out-of-stock-alert">00</div>
+                    <div class="stat-value" id="out-of-stock-alert">0</div>
                     <div class="stat-change positive" id="out-of-stock-stat">None</div>
                 </div>
             </div>
         </div>
+
+        <section class="stock-section">
+            <h2>Product Stock Status</h2>
+
+            <div class="table-wrapper">
+                <table class="stock-table">
+                    <thead>
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Product Name</th>
+                            <th>Stock Qty</th>
+                            <th>Added At</th>
+                            <th>Margin %</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="product-list-body">
+                        <tr>
+                            <h5 id="list-status">No Product Found Add New Product</h5>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
     </main>
 
-<dialog id="dialog">
-    <div class="icon">
-        <i class="fa-solid fa-circle-xmark"></i>
-    </div>
-    
-</dialog>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                 Dialogs                                 -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- ------------------------------- LogOut -------------------------------- -->
+    <dialog id="log_out">
+        <h1>Are you Sure?</h1>
+        <div class="buttons">
+            <button class="yes" id="success-logout">Yes</button>
+            <button class="discard" id="discard-logout">Discard</button>
+        </div>
+    </dialog>
 
 
+    <!-- ----------------------------- Add Product ----------------------------- -->
+    <dialog id="add_product">
+        <div class="icon" id="closeAddProduct">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <div class="form" id="product-form">
+            <h2>Add New Product</h2>
+
+            <div class="input-group">
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" placeholder="e.g. Wireless Headphones">
+            </div>
+
+            <div class="input-group">
+                <label for="product-category">Category</label>
+                <select id="product-category">
+                    <option value="">Select a category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="home">Home & Kitchen</option>
+                </select>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="product-buy-price">Buy Price (₹)</label>
+                    <input type="number" id="product-buy-price" step="0.01" placeholder="0.00">
+                </div>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="product-price">Sell Price (₹)</label>
+                    <input type="number" id="product-price" step="1" placeholder="0.00">
+                </div>
+                <div class="input-group">
+                    <label for="product-stock">Stock Quantity</label>
+                    <input type="number" id="product-stock" placeholder="0">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="product-desc">Description</label>
+                <textarea id="product-desc" rows="4" placeholder="Describe the product features..."></textarea>
+            </div>
+
+            <button type="button" class="submit-btn" id="_add_product_button_">Add Product</button>
+        </div>
+    </dialog>
+
+    <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
     <script src="./JavaScript/sidebar.js"></script>
     <script src="./JavaScript/utility.js"></script>
     <script src="./JavaScript/script.js"></script>

@@ -15,12 +15,13 @@
     --text-muted: #94a3b8;
     --white: #ffffff;
 
+    --test: hsl(0, 0%, 12%);
+
     --accent-info: #3b82f6;
     --accent-red: #ef4444;
     --accent-green: #10b981;
     --accent-warning: #d5e400;
 }
-
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -28,14 +29,13 @@ body {
     overflow-x: hidden;
 }
 
-/* Sidebar Styles */
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
-    width: 260px;
-    background: var(--bg-card);
+    width: 250px;
+    background: var(--test);
     color: white;
     transition: all 0.3s ease;
     z-index: 1000;
@@ -81,7 +81,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.2s;
+    transition: all 0.3s ease-in-out;
 }
 
 .collapse-btn:hover {
@@ -199,7 +199,6 @@ body {
     color: var(--white);
 }
 
-
 .search-box {
     display: flex;
     align-items: center;
@@ -224,7 +223,6 @@ body {
     align-items: center;
     gap: 16px;
 }
-
 
 .date-time {
     background: var(--bg-card);
@@ -460,8 +458,7 @@ tr:hover {
     }
 }
 
-
-.add-product-button{
+.add-product-button {
     margin: 10px 10px;
     width: 200px;
     height: 40px;
@@ -469,11 +466,309 @@ tr:hover {
     background-color: var(--accent-info);
     border: 2px solid var(--accent-info);
     color: var(--white);
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.add-product-button:hover{
-    transition: all .3s ease-in-out;
+.add-product-button:hover {
+    transition: all 0.3s ease-in-out;
     background-color: var(--bg-dark);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   Dialogs                                  */
+/* -------------------------------------------------------------------------- */
+
+#logout-tab {
+    transition: all 0.3s ease-in-out;
+}
+
+#logout-tab:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--accent-red);
+}
+
+#log_out {
+    background-color: rgba(107, 30, 30, 0.514);
+    border: 2px solid red;
+    outline: none;
+    border-radius: 14px;
+    width: 250px;
+    height: 150px;
+
+    h1 {
+        text-align: center;
+        color: var(--white);
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button {
+        width: 210px;
+        height: 34px;
+        border: 2px solid var(--bg-card);
+        outline: none;
+        background-color: transparent;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .yes {
+        transition: all 0.3s ease-in-out;
+        border: 2px solid var(--accent-red);
+    }
+
+    .yes:hover {
+        transition: all 0.3s ease-in-out;
+        background-color: var(--accent-red);
+    }
+
+    .discard {
+        background-color: var(--bg-card);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .discard:hover {
+        transition: all 0.3s ease-in-out;
+        border: 2px solid black;
+        background-color: var(--bg-dark);
+    }
+}
+
+/* ------------------------------- Add Product ------------------------------ */
+
+dialog::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+#add_product {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--bg-dark);
+    border: 2px solid var(--bg-card);
+    border-radius: 24px;
+    color: var(--white);
+    z-index: 9999999;
+
+    .icon {
+        display: flex;
+        justify-content: end;
+
+        i {
+            font-size: 25px;
+            cursor: pointer;
+            color: var(--text-main);
+            transition: all 0.3s ease;
+        }
+
+        i:hover {
+            transition: all 0.3s ease;
+            color: var(--text-muted);
+        }
+    }
+}
+
+.form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    background: var(--bg-dark);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", sans-serif;
+}
+
+.form h2 {
+    margin-top: 0;
+    color: var(--white);
+    text-align: center;
+    font-family: var(--Poppins);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid var(--bg-card);
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    font-family: var(--Poppins);
+}
+
+textarea {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 20vh;
+    min-height: 10vh;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-info);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    #add_product {
+        width: 100%;
+    }
+
+    #add_product .icon {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        width: 80%;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .submit-btn {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    textarea {
+        height: 10vh;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Stock List Section                             */
+/* -------------------------------------------------------------------------- */
+
+.stock-section {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 14px;
+    color: #e5e7eb;
+    font-family: "Inter", sans-serif;
+}
+
+.stock-section h2 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #020617;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.stock-table thead {
+    background: #020617;
+}
+
+.stock-table th {
+    text-align: left;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+.stock-table td {
+    padding: 14px;
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+}
+
+.stock-table tbody tr:hover {
+    background: #020617;
+}
+
+/* Status Tags */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.in-stock {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.low-stock {
+    background: rgba(234, 179, 8, 0.15);
+    color: #eab308;
+}
+
+.out-stock {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
 }
