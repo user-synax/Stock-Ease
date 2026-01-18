@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Ease - Dashboard</title>
+    <title>Stock Ease</title>
     <link rel="shortcut icon" href="/Assets/images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Css/orders.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet" href="/Libs/SnackBar-master/dist/snackbar.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -27,7 +26,7 @@
             </button>
         </div>
         <nav class="sidebar-menu">
-            <a href="#" class="menu-item active" data-tooltip="Dashboard">
+            <a href="/Dashboard/0213456.html" class="menu-item" data-tooltip="Dashboard">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
@@ -35,14 +34,14 @@
                 </svg>
                 <span>Dashboard</span>
             </a>
-            <a href="Html/products.html" class="menu-item" data-tooltip="Products">
+            <a href="./products.html" class="menu-item" data-tooltip="Products">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
                 <span>Products</span>
             </a>
-            <a href="./Html/analytics.html" class="menu-item" data-tooltip="Analytics">
+            <a href="./analytics.html" class="menu-item" data-tooltip="Analytics">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
@@ -50,7 +49,7 @@
                 </svg>
                 <span>Analytics</span>
             </a>
-            <a href="./Html/orders.html" class="menu-item" data-tooltip="Orders">
+            <a href="../Html/orders.html" class="menu-item active" data-tooltip="Orders">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
@@ -58,7 +57,7 @@
                 </svg>
                 <span>Orders</span>
             </a>
-            <a href="./Html/customers.html" class="menu-item" data-tooltip="Customers">
+            <a href="./customers.html" class="menu-item" data-tooltip="Customers">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
@@ -95,11 +94,8 @@
                     </svg>
                 </button>
                 <div class="search-box">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                    <input type="text" id="searchProduct" placeholder="Search products, orders...">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <input type="text" id="searchProduct" placeholder="Orders" disabled>
                 </div>
             </div>
             <div class="header-right">
@@ -109,87 +105,90 @@
             </div>
         </header>
 
-        <!-- Quick Preview Grid -->
-        <div class="content">
-            <h1 class="page-title">Overview</h1>
-            <button class="add-product-button" id="add-product-button">Add New Product</button>
 
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Products</span>
-                    </div>
-                    <div class="stat-value" id="products-count">0</div>
-                    <div class="stat-change positive" id="product-stat">Total : [ 0 ]</div>
-                </div>
 
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Inventory Value</span>
-                    </div>
-                    <div class="stat-value" id="Inventory-value">₹0</div>
-                    <div class="stat-change positive" id="Inventory-stat">Please add products to Calculate</div>
-                </div>
+        <section class="orders">
+            <div class="orders-container">
 
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Low Stock Items</span>
-                    </div>
-                    <div class="stat-value" id="low-stock-count">0</div>
-                    <div class="stat-change positive" id="low-stock-stat">None</div>
-                </div>
+                <h2 class="page-title"><i class="fa-solid fa-cart-shopping"></i> Create New Order</h2>
 
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Out of Stock</span>
+                <div class="orders-grid">
+
+                    <!-- LEFT SIDE -->
+                    <div class="left-panel">
+
+                        <div class="card glass">
+                            <h3><i class="fa-solid fa-user"></i> Customer Details</h3>
+                            <input id="customerName" placeholder="Customer Name">
+                            <input id="customerPhone" placeholder="Phone Number" type="number">
+                            <h3><i class="fa-solid fa-cart-plus"></i> Add Product</h3>
+                            <select id="productSelect"></select>
+                            <input id="productQty" type="number" min="1" placeholder="Quantity">
+                            <button id="addToCart" class="primary-btn">Add to Cart</button>
+                        </div>
                     </div>
-                    <div class="stat-value" id="out-of-stock-alert">0</div>
-                    <div class="stat-change positive" id="out-of-stock-stat">None</div>
+
+                    <!-- RIGHT SIDE -->
+                    <div class="right-panel">
+
+                        <div class="card glass">
+                            <h3><i class="fa-light fa-dolly"></i> Order Items</h3>
+
+                            <div class="cart-table-wrapper">
+                                <table class="cart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Qty</th>
+                                            <th>Per Product</th>
+                                            <th>Total</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cartBody"></tbody>
+                                </table>
+                            </div>
+
+                            <div class="checkout-box">
+                                <div class="total">
+                                    Total: ₹ <span id="orderTotal">0</span>
+                                </div>
+
+                                <button class="checkout-btn" id="checkoutOrder">
+                                    Checkout Order
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
-        </div>
+        </section>
 
-        <section class="stock-section">
-            <h2>Recent Products</h2>
+        <section class="recent-orders">
+            <h2>Recent Orders</h2>
 
             <div class="table-wrapper">
-                <table class="stock-table">
+                <table class="orders-table">
                     <thead>
                         <tr>
-                            <th>Product Id</th>
-                            <th>Product Name</th>
-                            <th>Product Category</th>
-                            <th>Stock Qty</th>
-                            <th>Added At</th>
-                            <th>Margin / PDT</th>
-                            <th>Status</th>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Phone</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Date</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody id="product-list-body">
-                        <tr>
-                            <h5 id="list-status">No Product Found Add New Product</h5>
-                        </tr>
+                    <tbody id="ordersTableBody">
+                        <!-- Orders will render here -->
                     </tbody>
                 </table>
             </div>
         </section>
-
-
-        <main class="dashboard-wrapper">
-            <section class="chart-card chart-card-sales">
-                <h3 class="chart-title">Products Overview</h3>
-                <canvas id="salesChart"></canvas>
-            </section>
-
-            <section class="chart-card chart-card-visitors">
-                <h3 class="chart-title">Low Stock Category</h3>
-                <canvas id="lowStockChart"></canvas>
-            </section>
-        </main>
-
     </main>
-
 
     <!-- ----------------------------------------------------------------------- -->
     <!--                                 Dialogs                                 -->
@@ -204,65 +203,45 @@
         </div>
     </dialog>
 
+    <!-- ---------------------------- Order Preview ---------------------------- -->
 
-    <!-- ----------------------------- Add Product ----------------------------- -->
-    <dialog id="add_product">
-        <div class="icon" id="closeAddProduct">
-            <i class="fa-solid fa-circle-xmark"></i>
+    <dialog id="orderDetailsDialog" class="order-dialog">
+        <div class="dialog-header">
+            <h3>Order Details</h3>
+            <button onclick="closeOrderDialog()">✕</button>
         </div>
 
-        <div class="form" id="product-form">
-            <h2>Add New Product</h2>
+        <div class="dialog-content">
+            <p><strong>Order ID:</strong> <span id="odOrderId"></span></p>
+            <p><strong>Customer:</strong> <span id="odCustomer"></span></p>
+            <p><strong>Phone:</strong> <span id="odPhone"></span></p>
+            <p><strong>Date:</strong> <span id="odDate"></span></p>
 
-            <div class="input-group">
-                <label for="product-name">Product Name</label>
-                <input type="text" id="product-name" placeholder="e.g. Wireless Headphones" autocomplete="off">
-            </div>
+            <table class="dialog-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="odItems"></tbody>
+            </table>
 
-            <div class="input-group">
-                <label for="product-category">Category</label>
-                <select id="product-category">
-                    <option value="">Select a category</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Clothing">Clothing</option>
-                    <option value="Home">Home</option>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Stationary">Stationary</option>
-                    <option value="Accessories">Accessories</option>
-                </select>
-            </div>
-
-            <div class="input-row">
-                <div class="input-group">
-                    <label for="product-buy-price">Buy Price (₹)</label>
-                    <input type="number" id="product-buy-price" step="0.01" placeholder="0.00">
-                </div>
-            </div>
-
-            <div class="input-row">
-                <div class="input-group">
-                    <label for="product-price">Sell Price (₹)</label>
-                    <input type="number" id="product-price" step="1" placeholder="0.00">
-                </div>
-                <div class="input-group">
-                    <label for="product-stock">Stock Quantity</label>
-                    <input type="number" id="product-stock" placeholder="0">
-                </div>
-            </div>
-
-            <div class="input-group">
-                <label for="product-desc">Description</label>
-                <textarea id="product-desc" rows="4" placeholder="Describe the product features..."></textarea>
-            </div>
-
-            <button type="button" class="submit-btn" id="_add_product_button_">Add Product</button>
+            <h4 class="dialog-total">
+                Grand Total: ₹<span id="odTotal"></span>
+            </h4>
         </div>
     </dialog>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
-    <script src="./JavaScript/sidebar.js"></script>
-    <script src="./JavaScript/utility.js"></script>
-    <script src="./JavaScript/script.js"></script>
+    <script src="../JavaScript/sidebar.js"></script>
+    <script src="../JavaScript/utility.js"></script>
+    <script src="../Js/orders.js"></script>
 </body>
 
 </html>

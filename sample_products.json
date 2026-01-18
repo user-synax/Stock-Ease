@@ -1,0 +1,152 @@
+[
+    {
+        "id": "295385730771",
+        "name": "Headphone",
+        "category": "Electronics",
+        "price": "2499",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "899",
+        "addedAt": "6:37 PM"
+    },
+    {
+        "id": "5734832197",
+        "name": "Keyboard",
+        "category": "Electronics",
+        "price": "699",
+        "stock": "20",
+        "description": "",
+        "buyPrice": "299",
+        "addedAt": "6:37 PM"
+    },
+    {
+        "id": "71469804277",
+        "name": "Zebronics Moniter",
+        "category": "Electronics",
+        "price": "7999",
+        "stock": "20",
+        "description": "",
+        "buyPrice": "5999",
+        "addedAt": "6:38 PM"
+    },
+    {
+        "id": "798319811947",
+        "name": "Mouse",
+        "category": "Electronics",
+        "price": "149",
+        "stock": "30",
+        "description": "",
+        "buyPrice": "99",
+        "addedAt": "6:38 PM"
+    },
+    {
+        "id": "79718442740",
+        "name": "Shirt - XL",
+        "category": "Clothing",
+        "price": "299",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "79",
+        "addedAt": "6:39 PM"
+    },
+    {
+        "id": "507474509814",
+        "name": "Shirt - MD",
+        "category": "Clothing",
+        "price": "129",
+        "stock": "40",
+        "description": "",
+        "buyPrice": "79",
+        "addedAt": "6:39 PM"
+    },
+    {
+        "id": "869233572387",
+        "name": "Painting",
+        "category": "Home",
+        "price": "499",
+        "stock": "20",
+        "description": "",
+        "buyPrice": "299",
+        "addedAt": "6:39 PM"
+    },
+    {
+        "id": "48910146354",
+        "name": "Decorative Flowers",
+        "category": "Home",
+        "price": "299",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "99",
+        "addedAt": "6:40 PM"
+    },
+    {
+        "id": "350330699155",
+        "name": "Knife",
+        "category": "Kitchen",
+        "price": "149",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "99",
+        "addedAt": "6:40 PM"
+    },
+    {
+        "id": "74845427368",
+        "name": "Spoon Packet ( 12 Pieces )",
+        "category": "Kitchen",
+        "price": "199",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "99",
+        "addedAt": "6:41 PM"
+    },
+    {
+        "id": "935298961708",
+        "name": "Study Table",
+        "category": "Stationary",
+        "price": "6999",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "2499",
+        "addedAt": "6:41 PM"
+    },
+    {
+        "id": "203188345490",
+        "name": "Pens Packet",
+        "category": "Stationary",
+        "price": "299",
+        "stock": "50",
+        "description": "",
+        "buyPrice": "99",
+        "addedAt": "6:42 PM"
+    },
+    {
+        "id": "887113291970",
+        "name": "i phone 12 Pro Cover",
+        "category": "Accessories",
+        "price": "299",
+        "stock": "20",
+        "description": "",
+        "buyPrice": "99",
+        "addedAt": "6:42 PM"
+    },
+    {
+        "id": "625912590498",
+        "name": "Wired Earphone",
+        "category": "Accessories",
+        "price": "199",
+        "stock": "30",
+        "description": "",
+        "buyPrice": "49",
+        "addedAt": "6:42 PM"
+    },
+    {
+        "id": "391583894414",
+        "name": "Wifi Dongle 5 GHZ",
+        "category": "Accessories",
+        "price": "499",
+        "stock": "20",
+        "description": "",
+        "buyPrice": "299",
+        "addedAt": "6:43 PM"
+    }
+]

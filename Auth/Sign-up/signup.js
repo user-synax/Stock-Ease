@@ -111,7 +111,7 @@ const saveData = () => {
         duration: 3000,
     });
     setTimeout(() => {
-        location.href = '/Auth/login/login.html'
+        location.href = '/Dashboard/0213456.html'
     }, 2000)
 };
 

@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Ease - Dashboard</title>
+    <title>Stock Ease</title>
     <link rel="shortcut icon" href="/Assets/images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Css/products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet" href="/Libs/SnackBar-master/dist/snackbar.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -27,7 +26,7 @@
             </button>
         </div>
         <nav class="sidebar-menu">
-            <a href="#" class="menu-item active" data-tooltip="Dashboard">
+            <a href="/Dashboard/0213456.html" class="menu-item" data-tooltip="Dashboard">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
@@ -35,14 +34,14 @@
                 </svg>
                 <span>Dashboard</span>
             </a>
-            <a href="Html/products.html" class="menu-item" data-tooltip="Products">
+            <a href="../Html/products.html" class="menu-item active" data-tooltip="Products">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                 </svg>
                 <span>Products</span>
             </a>
-            <a href="./Html/analytics.html" class="menu-item" data-tooltip="Analytics">
+            <a href="./analytics.html" class="menu-item" data-tooltip="Analytics">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
@@ -50,7 +49,7 @@
                 </svg>
                 <span>Analytics</span>
             </a>
-            <a href="./Html/orders.html" class="menu-item" data-tooltip="Orders">
+            <a href="./orders.html" class="menu-item" data-tooltip="Orders">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
@@ -58,7 +57,7 @@
                 </svg>
                 <span>Orders</span>
             </a>
-            <a href="./Html/customers.html" class="menu-item" data-tooltip="Customers">
+            <a href="./customers.html" class="menu-item" data-tooltip="Customers">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
@@ -99,7 +98,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
-                    <input type="text" id="searchProduct" placeholder="Search products, orders...">
+                    <input type="text" id="searchProduct" placeholder="Search products by Id, Name & Category">
                 </div>
             </div>
             <div class="header-right">
@@ -111,48 +110,21 @@
 
         <!-- Quick Preview Grid -->
         <div class="content">
-            <h1 class="page-title">Overview</h1>
-            <button class="add-product-button" id="add-product-button">Add New Product</button>
-
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Products</span>
-                    </div>
-                    <div class="stat-value" id="products-count">0</div>
-                    <div class="stat-change positive" id="product-stat">Total : [ 0 ]</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Inventory Value</span>
-                    </div>
-                    <div class="stat-value" id="Inventory-value">₹0</div>
-                    <div class="stat-change positive" id="Inventory-stat">Please add products to Calculate</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Low Stock Items</span>
-                    </div>
-                    <div class="stat-value" id="low-stock-count">0</div>
-                    <div class="stat-change positive" id="low-stock-stat">None</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Out of Stock</span>
-                    </div>
-                    <div class="stat-value" id="out-of-stock-alert">0</div>
-                    <div class="stat-change positive" id="out-of-stock-stat">None</div>
-                </div>
-            </div>
         </div>
 
         <section class="stock-section">
-            <h2>Recent Products</h2>
-
+            <div class="title">
+                <h2>All Products</h2>
+                <div class="filter-box">
+                    <select id="statusFilter">
+                        <option value="all">All Products</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="stock-soon">Stock Soon</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                </div>
+            </div>
+            <br>
             <div class="table-wrapper">
                 <table class="stock-table">
                     <thead>
@@ -165,7 +137,9 @@
                             <th>Margin / PDT</th>
                             <th>Status</th>
                         </tr>
+
                     </thead>
+
                     <tbody id="product-list-body">
                         <tr>
                             <h5 id="list-status">No Product Found Add New Product</h5>
@@ -175,18 +149,6 @@
             </div>
         </section>
 
-
-        <main class="dashboard-wrapper">
-            <section class="chart-card chart-card-sales">
-                <h3 class="chart-title">Products Overview</h3>
-                <canvas id="salesChart"></canvas>
-            </section>
-
-            <section class="chart-card chart-card-visitors">
-                <h3 class="chart-title">Low Stock Category</h3>
-                <canvas id="lowStockChart"></canvas>
-            </section>
-        </main>
 
     </main>
 
@@ -204,15 +166,15 @@
         </div>
     </dialog>
 
+    <!-- --------------------------- Update Product ---------------------------- -->
 
-    <!-- ----------------------------- Add Product ----------------------------- -->
     <dialog id="add_product">
         <div class="icon" id="closeAddProduct">
             <i class="fa-solid fa-circle-xmark"></i>
         </div>
 
         <div class="form" id="product-form">
-            <h2>Add New Product</h2>
+            <h2>Update Product</h2>
 
             <div class="input-group">
                 <label for="product-name">Product Name</label>
@@ -255,14 +217,14 @@
                 <textarea id="product-desc" rows="4" placeholder="Describe the product features..."></textarea>
             </div>
 
-            <button type="button" class="submit-btn" id="_add_product_button_">Add Product</button>
+            <button type="button" class="submit-btn" id="_add_product_button_">Update Product</button>
         </div>
     </dialog>
 
     <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
-    <script src="./JavaScript/sidebar.js"></script>
-    <script src="./JavaScript/utility.js"></script>
-    <script src="./JavaScript/script.js"></script>
+    <script src="../JavaScript/sidebar.js"></script>
+    <script src="../JavaScript/utility.js"></script>
+    <script src="../Js/products.js"></script>
 </body>
 
 </html>

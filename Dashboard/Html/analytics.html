@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Ease</title>
+    <link rel="shortcut icon" href="/Assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../Css/analytics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="/Libs/SnackBar-master/dist/snackbar.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- ------------------------------- Overlay ------------------------------- -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ------------------------------- Sidebar ------------------------------- -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fa-solid fa-cubes"></i> Stock Ease</h2>
+            <button class="collapse-btn" id="collapseBtn">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="/Dashboard/0213456.html" class="menu-item" data-tooltip="Dashboard">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                    </path>
+                </svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="./products.html" class="menu-item" data-tooltip="Products">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                </svg>
+                <span>Products</span>
+            </a>
+            <a href="./analytics.html" class="menu-item active" data-tooltip="Analytics">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                    </path>
+                </svg>
+                <span>Analytics</span>
+            </a>
+            <a href="../Html/orders.html" class="menu-item" data-tooltip="Orders">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg>
+                <span>Orders</span>
+            </a>
+            <a href="./customers.html" class="menu-item" data-tooltip="Customers">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                    </path>
+                </svg>
+                <span>Customers</span>
+            </a>
+            <a href="#" class="menu-item" data-tooltip="Settings">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Settings</span>
+            </a>
+            <a class="menu-item" id="logout-tab" data-tooltip="Settings">
+                <i class="fa-solid fa-arrow-right-from-bracket" style="transform: rotate(180deg);"></i> &nbsp; &nbsp;
+                <span>Log Out</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ---------------------------- Main Content ----------------------------- -->
+    <main class="main-content" id="mainContent">
+        <!-- ------------------------------- Header -------------------------------- -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <input type="text" id="searchProduct" placeholder="Analytics" disabled>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="date-time">
+                    <h2 id="dateAndTime"></h2>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-wrapper">
+            <section class="chart-card chart-card-sales">
+                <h3 class="chart-title">Products Overview</h3>
+                <canvas id="salesChart"></canvas>
+            </section>
+
+            <section class="chart-card chart-card-visitors">
+                <h3 class="chart-title">Low Stock Category</h3>
+                <canvas id="lowStockChart"></canvas>
+            </section>
+        </main>
+
+        <!-- ------------------------------ Analysic ------------------------------- -->
+
+        <section class="analytics">
+            <!-- KPI CARDS -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <h4>Total Inventory Value</h4>
+                    <p id="totalInventoryValue">₹ 0</p>
+                </div>
+
+                <div class="kpi-card warning">
+                    <h4>Low Stock Products</h4>
+                    <p id="lowStockCount">0</p>
+                </div>
+
+                <div class="kpi-card danger">
+                    <h4>Out of Stock</h4>
+                    <p id="outOfStockCount">0</p>
+                </div>
+            </div>
+
+            <!-- CHARTS -->
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h3>Stock Health Overview</h3>
+                    <canvas id="stockHealthChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Stock Value by Category</h3>
+                    <canvas id="stockValueCategoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card full">
+                <h3>Top 5 Profitable Products</h3>
+                <canvas id="topProfitProductsChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <h1 class="download-btn-wrapper">
+            <button id="downloadInventoryReport" class="download-btn">
+                Download Inventory Report
+            </button>
+
+        </h1>
+    </main>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!--                                 Dialogs                                 -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- ------------------------------- LogOut -------------------------------- -->
+    <dialog id="log_out">
+        <h1>Are you Sure?</h1>
+        <div class="buttons">
+            <button class="yes" id="success-logout">Yes</button>
+            <button class="discard" id="discard-logout">Discard</button>
+        </div>
+    </dialog>
+
+    <!-- jsPDF core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- AutoTable plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
+    <script src="../JavaScript/sidebar.js"></script>
+    <script src="../JavaScript/utility.js"></script>
+    <script src="../Js/analytics.js"></script>
+</body>
+
+</html>
