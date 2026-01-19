@@ -463,21 +463,21 @@ body {
 }
 
 .customers-table th {
-    background: var(--bg-card);
+    background: var(--bg-dark);
     color: var(--white);
 }
 
 .customers-table button {
     background: none;
     border: none;
-    color: #ef4444;
+    color: var(--accent-red);
     cursor: pointer;
 }
 
 /* MODAL */
 .customer-modal {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     border: none;
     border-radius: 12px;
     padding: 20px;

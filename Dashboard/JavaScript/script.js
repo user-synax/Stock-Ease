@@ -174,7 +174,7 @@ const validProductForm = () => {
 
         let ProductId = "";
         for (let i = 0; i < 4; i++) {
-            let GenerateRandomID = Math.floor(Math.random() * 1000);
+            let GenerateRandomID = Math.floor(Math.random() * 100);
             ProductId += GenerateRandomID;
         }
 

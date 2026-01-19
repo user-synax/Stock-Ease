@@ -427,7 +427,7 @@ body {
 /* ---------- PAGE ---------- */
 
 .orders {
-    padding: 24px;
+    padding: 30px;
     background: var(--bg-dark);
     min-height: 80vh;
     color: #e5e7eb;

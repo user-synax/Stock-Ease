@@ -226,7 +226,7 @@ new Chart(document.getElementById("topProfitProductsChart"), {
         datasets: [{
             label: "Total Profit (₹)",
             data: top5.map(p => p.profit),
-            backgroundColor: "#10b981"
+            backgroundColor: "#0b855c"
         }]
     },
     options: {

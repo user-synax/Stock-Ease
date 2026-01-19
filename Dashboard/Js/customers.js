@@ -4,15 +4,30 @@ const customersBody = document.getElementById("customersBody");
 
 function loadCustomers() {
     const customers = JSON.parse(localStorage.getItem("customers")) || [];
+    const orderedCustomers = JSON.parse(localStorage.getItem("orders")) || [];
     customersBody.innerHTML = "";
 
     customers.forEach(c => {
         customersBody.innerHTML += `
             <tr>
                 <td>${c.name}</td>
-                <td>${c.phone}</td>
-                <td>${c.email || "-"}</td>
-                <td>${c.address || "-"}</td>
+                <td>${c.phone} || "NA"</td>
+                <td>${c.email || "NA"}</td>
+                <td>${c.address || "NA"}</td>
+                <td>
+                    <button onclick="deleteCustomer('${c.id}')"><i class="fa-regular fa-trash-can"></i></button>
+                </td>
+            </tr>
+        `;
+    });
+
+    orderedCustomers.forEach(c => {
+        customersBody.innerHTML += `
+            <tr>
+                <td>${c.customer.name}</td>
+                <td>${c.customer.phone}</td>
+                <td>${c.email || "NA"}</td>
+                <td>${c.address || "NA"}</td>
                 <td>
                     <button onclick="deleteCustomer('${c.id}')"><i class="fa-regular fa-trash-can"></i></button>
                 </td>
