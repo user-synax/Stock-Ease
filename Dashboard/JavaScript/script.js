@@ -155,6 +155,9 @@ const validProductForm = () => {
             backgroundColor: `${ErrorColor}`,
             duration: 3000,
         });
+        let Errorsound = new Audio()
+        Errorsound.src = "../../Assets/Sound/error.mp3"
+        Errorsound.play()
         setTimeout(() => {
             Getname.style.border = `2px solid ${InputBorder}`;
             Getcategory.style.border = `2px solid ${InputBorder}`;
@@ -169,7 +172,6 @@ const validProductForm = () => {
             minute: "numeric",
             hour12: true,
         });
-
         let products = JSON.parse(localStorage.getItem("products")) || [];
 
         let ProductId = "";
@@ -200,11 +202,15 @@ const validProductForm = () => {
             backgroundColor: `${SuccessColor}`,
         });
 
+        let sound = new Audio()
+        sound.src = "../../Assets/Sound/add_product.mp3"
+
         Getname.textContent = "";
         Getprice.textContent = "";
         Getstock.textContent = "";
         Getdescription.textContent = "";
         AddProdyuctDialog.close()
+        sound.play()
         Reload();
     }
 };
@@ -212,6 +218,13 @@ const validProductForm = () => {
 AddProductFormButton.addEventListener("click", () => {
     validProductForm();
 });
+
+window.addEventListener("keydown", e => {
+    console.log(e)
+    if (e.altKey = true && e.key == "n") {
+        document.getElementById("add_product").show();
+    }
+})
 
 /* ----------------------- Adding New Products On List ---------------------- */
 
@@ -385,7 +398,7 @@ const renderLowStockChart = () => {
     if (!ctx) return;
 
     const products = JSON.parse(localStorage.getItem("products")) || [];
-    const LOW_STOCK_LIMIT = 10;
+    const LOW_STOCK_LIMIT = 5;
 
     // Filter low stock products
     const lowStockProducts = products.filter(

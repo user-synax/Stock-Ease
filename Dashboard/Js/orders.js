@@ -15,6 +15,8 @@ DiscardLogout.addEventListener("click", () => {
     document.getElementById("log_out").close();
 });
 
+
+
 const productSelect = document.getElementById("productSelect");
 const qtyInput = document.getElementById("productQty");
 const cartBody = document.getElementById("cartBody");
@@ -34,7 +36,7 @@ const loadProducts = () => {
         if (p.stock > 0) {
             productSelect.innerHTML += `
                 <option value="${p.id}">
-                    ${p.name} (Stock: ${p.stock})
+                    ${p.name} | (Stock: ${p.stock})
                 </option>
             `;
         }
@@ -44,33 +46,53 @@ loadProducts();
 
 const validateAndAddToCart = () => {
     const productId = productSelect.value;
-    const customerPhoneNumber = customer_Phone.value
-    const customer_Name = customerName.value.trim()
+    const customerPhoneNumber = customer_Phone.value.trim();
     const qty = Number(qtyInput.value);
 
-    if (!productId || qty <= 0 || customerPhoneNumber.length < 10 || customerName.length < 3) return Snackbar.show({ text: "Invalid Input", showAction: false, pos: 'bottom-right', backgroundColor: 'red' })
+    if (!productId || qty <= 0 || customerPhoneNumber.length < 10 || customerName.value.trim().length < 3) {
+        return Snackbar.show({
+            text: "Invalid Input",
+            showAction: false,
+            pos: "bottom-right",
+            backgroundColor: "red"
+        });
+    }
 
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    if (qty > product.stock) {
-        return Snackbar.show({ text: "Over Quantity", showAction: false, pos: 'bottom-right', backgroundColor: 'red' })
+    const existing = cart.find(i => i.id === productId);
+    const alreadyInCartQty = existing ? existing.qty : 0;
+
+    const remainingStock = Number(product.stock) - alreadyInCartQty;
+
+    if (qty > remainingStock) {
+        return Snackbar.show({
+            text: `Only ${remainingStock} left in stock`,
+            showAction: false,
+            pos: "bottom-right",
+            backgroundColor: "red"
+        });
     }
 
-    const existing = cart.find(i => i.id === productId);
     if (existing) {
         existing.qty += qty;
     } else {
         cart.push({
             id: product.id,
             name: product.name,
-            price: product.price,
+            price: Number(product.price),
             qty
         });
+        console.log(products)
     }
 
     renderCart();
-}
+    loadProducts();
+
+    qtyInput.value = "";
+};
+
 
 document.getElementById("addToCart").addEventListener("click", validateAndAddToCart);
 
@@ -140,6 +162,9 @@ document.getElementById("checkoutOrder").addEventListener("click", () => {
     renderCart();
     loadProducts();
     renderRecentOrders();
+    let CheckoutSound = new Audio()
+    CheckoutSound.src = "../../Assets/Sound/checkout.mp3"
+    CheckoutSound.play()
 });
 
 

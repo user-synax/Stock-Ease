@@ -1,3 +1,21 @@
+const LogOutButton = document.getElementById("logout-tab");
+
+const SuccessLogout = document.getElementById("success-logout");
+const DiscardLogout = document.getElementById("discard-logout");
+
+LogOutButton.addEventListener("click", () => {
+    document.getElementById("log_out").showModal();
+});
+
+SuccessLogout.addEventListener("click", () => {
+    location.href = "../../index.html";
+});
+
+DiscardLogout.addEventListener("click", () => {
+    document.getElementById("log_out").close();
+});
+
+
 const customersBody = document.getElementById("customersBody");
 
 /* ---------------- LOAD CUSTOMERS ---------------- */
@@ -11,7 +29,7 @@ function loadCustomers() {
         customersBody.innerHTML += `
             <tr>
                 <td>${c.name}</td>
-                <td>${c.phone} || "NA"</td>
+                <td>${c.phone || "NA"} </td>
                 <td>${c.email || "NA"}</td>
                 <td>${c.address || "NA"}</td>
                 <td>

@@ -238,6 +238,9 @@ document.querySelector(".stock-table tbody").addEventListener("click", (e) => {
         });
 
         RenderProductsList();
+        let sound = new Audio()
+        sound.src = "../../Assets/Sound/delete.mp3"
+        sound.play()
     }
 });
 
