@@ -360,6 +360,11 @@ body {
 /*                                   Dialogs                                  */
 /* -------------------------------------------------------------------------- */
 
+dialog::backdrop{
+    backdrop-filter: blur(10px);
+}
+
+
 #logout-tab {
     transition: all 0.3s ease-in-out;
 }
@@ -456,7 +461,8 @@ body {
 
 /* ---------- GLASS CARD ---------- */
 
-.card.glass {
+.card,
+.glass {
     background: var(--bg-card);
     backdrop-filter: blur(8px);
     border-radius: 16px;

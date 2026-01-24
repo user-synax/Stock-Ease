@@ -360,6 +360,10 @@ body {
 /*                                   Dialogs                                  */
 /* -------------------------------------------------------------------------- */
 
+dialog::backdrop{
+    backdrop-filter: blur(10px);
+}
+
 #logout-tab {
     transition: all 0.3s ease-in-out;
 }

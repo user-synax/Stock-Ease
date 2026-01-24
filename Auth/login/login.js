@@ -15,6 +15,9 @@ const checkFields = () => {
             backgroundColor: "red",
             duration: 3000,
         });
+        let ErrorSound = new Audio()
+        ErrorSound.src = "../../Assets/Sound/error.mp3"
+        ErrorSound.play()
         GetEmail.style.border = "1px solid red";
         GetPassword.style.border = "1px solid red";
         setTimeout(() => {
@@ -40,6 +43,9 @@ const checkAuth = () => {
             backgroundColor: "red",
             duration: 3000,
         });
+        let ErrorSound = new Audio()
+        ErrorSound.src = "../../Assets/Sound/error.mp3"
+        ErrorSound.play()
         GetEmail.style.border = "1px solid red";
         setTimeout(() => {
             GetEmail.style.border = "1px solid gray";
@@ -52,6 +58,9 @@ const checkAuth = () => {
             backgroundColor: "red",
             duration: 3000,
         });
+        let ErrorSound = new Audio()
+        ErrorSound.src = "../../Assets/Sound/error.mp3"
+        ErrorSound.play()
         GetPassword.style.border = "1px solid red";
         setTimeout(() => {
             GetPassword.style.border = "1px solid gray";
@@ -64,6 +73,9 @@ const checkAuth = () => {
             backgroundColor: "#04410cff",
             duration: 3000,
         });
+        let SuccessSound = new Audio()
+        SuccessSound.src = "../../Assets/Sound/success.mp3"
+        SuccessSound.play()
         GetEmail.style.border = "1px solid green";
         GetPassword.style.border = "1px solid green";
         GetEmail.disabled = true;
@@ -80,7 +92,7 @@ const checkAuth = () => {
 
 LogInButton.addEventListener("click", checkFields);
 window.addEventListener("keydown", (e) => {
-    if (e.key == 'Enter'){
+    if (e.key == 'Enter') {
         checkFields()
     }
 })

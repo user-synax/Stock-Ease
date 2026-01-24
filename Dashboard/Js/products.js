@@ -211,6 +211,9 @@ const updateProduct = () => {
 
     document.getElementById("add_product").close();
     Reload()
+    let SuccessSound = new Audio()
+    SuccessSound.src = "../../Assets/Sound/success.mp3"
+    SuccessSound.play()
 };
 
 updateProductButton.addEventListener("click", updateProduct)
@@ -244,7 +247,6 @@ document.querySelector(".stock-table tbody").addEventListener("click", (e) => {
     }
 });
 
-
 /* ----------------------------- Filter Products ---------------------------- */
 
 const statusFilter = document.getElementById("statusFilter");
@@ -252,64 +254,6 @@ const statusFilter = document.getElementById("statusFilter");
 statusFilter.addEventListener("change", () => {
     filterProductsByStatus(statusFilter.value);
 });
-
-// const filterProductsByStatus = (selectedStatus) => {
-//     const tableBody = document.querySelector(".stock-table tbody");
-//     const products = JSON.parse(localStorage.getItem("products")) || [];
-
-//     const getStockStatus = (stock) => {
-//         if (stock > 20) {
-//             return { text: "In Stock", class: "in-stock" };
-//         } else if (stock > 0) {
-//             return { text: "Stock Soon", class: "low-stock" };
-//         } else {
-//             return { text: "Out of Stock", class: "out-stock" };
-//         }
-//     };
-
-//     let filteredProducts = products;
-
-//     if (selectedStatus !== "all") {
-//         filteredProducts = products.filter(product => {
-//             return getStockStatus(product.stock) === selectedStatus;
-//         });
-//     }
-
-//     tableBody.innerHTML = filteredProducts.map(product => {
-//         const statusClass = getStockStatus(product.stock);
-//         const statusText =
-//             statusClass === "in-stock" ? "In Stock" :
-//                 statusClass === "stock-stock" ? "Stock Soon" :
-//                     "Out of Stock";
-
-//         let margin = product.price - product.buyPrice;
-
-//         return `
-//         <tr>
-//             <td>${product.id}</td>
-//             <td>${product.name}</td>
-//             <td>${product.category}</td>
-//             <td>${product.stock}</td>
-//             <td>${product.addedAt}</td>
-//             <td>₹ ${Math.floor(margin)}</td>
-//             <td>
-//                 <span class="status ${statusClass}">
-//                     ${statusText}
-//                 </span>
-//             </td>
-//             <td>
-//                 <button class="edit-product-btn" data-id="${product.id}">
-//                     <i class="fa-regular fa-pen-to-square"></i>
-//                 </button>
-//                 <button class="delete-product-btn" data-id="${product.id}">
-//                     <i class="fa-regular fa-trash-can"></i>
-//                 </button>
-//             </td>
-//         </tr>
-//         `;
-//     }).join("");
-// };
-
 
 const filterProductsByStatus = (selectedStatus) => {
     const tableBody = document.querySelector(".stock-table tbody");
@@ -332,8 +276,6 @@ const filterProductsByStatus = (selectedStatus) => {
             return getStockStatus(product.stock).class === selectedStatus;
         });
     }
-
-
 
     tableBody.innerHTML = filteredProducts.map(product => {
         const status = getStockStatus(product.stock);

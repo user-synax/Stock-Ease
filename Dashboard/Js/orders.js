@@ -84,7 +84,6 @@ const validateAndAddToCart = () => {
             price: Number(product.price),
             qty
         });
-        console.log(products)
     }
 
     renderCart();
@@ -163,7 +162,7 @@ document.getElementById("checkoutOrder").addEventListener("click", () => {
     loadProducts();
     renderRecentOrders();
     let CheckoutSound = new Audio()
-    CheckoutSound.src = "../../Assets/Sound/checkout.mp3"
+    CheckoutSound.src = "../../Assets/Sound/cashCounter.mp3"
     CheckoutSound.play()
 });
 

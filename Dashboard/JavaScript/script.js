@@ -1,3 +1,6 @@
+/* ------------------------------ Welcome User ------------------------------ */
+let userWelcomeText = document.getElementById("user-welcome")
+
 /* ----------------------------- Dashboard Items ---------------------------- */
 const ProductsCount = document.getElementById("products-count");
 const ProductsStat = document.getElementById("product-stat");
@@ -52,6 +55,7 @@ closeAddProductIcon.addEventListener("click", () => {
 
 const Reload = () => {
     DisplayProduct();
+    setUsername()
     DisplyInvenotryValue();
     RenderProductsList();
     checkLowStock();
@@ -62,9 +66,19 @@ const Reload = () => {
     renderLowStockChart()
 };
 
+const setUsername = () => {
+    let UserDetails = JSON.parse(localStorage.getItem("user"));
+
+    if (!UserDetails) {
+        userWelcomeText.textContent = `Dashboard Overview`
+    } else {
+        userWelcomeText.textContent = `Welcome, ${UserDetails.Username}`
+    }
+}
+
+
 const DisplayProduct = () => {
     let AllProducts = JSON.parse(localStorage.getItem("products"));
-
     if (!AllProducts) {
         return;
     } else {
@@ -220,7 +234,6 @@ AddProductFormButton.addEventListener("click", () => {
 });
 
 window.addEventListener("keydown", e => {
-    console.log(e)
     if (e.altKey = true && e.key == "n") {
         document.getElementById("add_product").show();
     }
