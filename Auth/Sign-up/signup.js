@@ -113,6 +113,7 @@ const ValidateFields = () => {
         let SuccessSound = new Audio()
         SuccessSound.src = "../../Assets/Sound/success.mp3"
         SuccessSound.play()
+        GetUsername.style.border = "2px solid #10b981"
         GetEmail.style.border = "2px solid #10b981"
         GetPassword.style.border = "2px solid #10b981"
         GetRepeatPassword.style.border = "2px solid #10b981"

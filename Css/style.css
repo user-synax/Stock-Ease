@@ -1,5 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+::selection {
+    background-color: var(--text-muted);
+    color: var(--primary);
+}
+
+/* -------------------------------- Timeline -------------------------------- */
+
+.timeline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: var(--primary);
+    width: 0px;
+    z-index: 999;
+    animation: timeline;
+    animation-timeline: scroll();
+}
+
+@keyframes timeline {
+    form {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -220,7 +248,8 @@ nav {
 
     .cta a:hover {
         transition: all 0.3s ease-in;
-        box-shadow: 0px 2px 12px var(--primary),
+        box-shadow:
+            0px 2px 12px var(--primary),
             inset 0px 5px 8px var(--primary-font);
     }
 
@@ -401,7 +430,8 @@ nav {
             }
 
             .cta-button:hover {
-                box-shadow: 0px 0px 24px var(--primary),
+                box-shadow:
+                    0px 0px 24px var(--primary),
                     inset 0px 5px 8px var(--primary-font);
             }
 
@@ -549,7 +579,8 @@ p {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0px 2px 12px var(--primary),
+    box-shadow:
+        0px 2px 12px var(--primary),
         inset 0px 5px 8px var(--primary-font);
 }
 
@@ -884,7 +915,9 @@ p {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.2s ease;
 }
 
 .btn-submit:hover {
@@ -919,7 +952,7 @@ p {
     padding-bottom: 50px;
 }
 
-.footer-grid .footer-brand{
+.footer-grid .footer-brand {
     backdrop-filter: purple;
 }
 
@@ -933,7 +966,7 @@ p {
     justify-content: space-evenly;
     gap: 10px;
 
-    h4{
+    h4 {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1024,7 +1057,6 @@ p {
     font-size: 0.9rem;
 }
 
-
 .footer-bottom-links span {
     color: #64748b;
     font-size: 0.9rem;
@@ -1092,8 +1124,8 @@ p {
     cursor: none;
 }
 
-@media (max-width: 768px){
-    .footer-logo{
+@media (max-width: 768px) {
+    .footer-logo {
         display: none;
     }
 }

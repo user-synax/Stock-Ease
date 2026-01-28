@@ -785,6 +785,25 @@ textarea:focus {
     color: #ef4444;
 }
 
+@media (max-width: 768px) {
+    .stock-table td {
+        font-size: 12px;
+    }
+
+    .in-stock {
+        width: 85%;
+        font-size: 12px;
+    }
+    .low-stock {
+        width: 85%;
+        font-size: 12px;
+    }
+    .out-stock {
+        width: 85%;
+        font-size: 12px;
+    }
+}
+
 /* --------------------------------- Charts --------------------------------- */
 
 .app-header {

@@ -33,7 +33,7 @@ const checkAuth = () => {
     let Email = GetEmail.value.trim();
     let Password = GetPassword.value.trim();
 
-    let user = JSON.parse(localStorage.getItem(Email));
+    let user = JSON.parse(localStorage.getItem('user'));
 
     if (!user) {
         Snackbar.show({

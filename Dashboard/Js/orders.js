@@ -50,12 +50,16 @@ const validateAndAddToCart = () => {
     const qty = Number(qtyInput.value);
 
     if (!productId || qty <= 0 || customerPhoneNumber.length < 10 || customerName.value.trim().length < 3) {
-        return Snackbar.show({
+        Snackbar.show({
             text: "Invalid Input",
             showAction: false,
             pos: "bottom-right",
             backgroundColor: "red"
         });
+        let sound = new Audio()
+        sound.src = "../../Assets/Sound/error.mp3"
+        sound.play()
+        return
     }
 
     const product = products.find(p => p.id === productId);

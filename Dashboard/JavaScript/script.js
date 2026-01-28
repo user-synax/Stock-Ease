@@ -54,8 +54,8 @@ closeAddProductIcon.addEventListener("click", () => {
 /* -------------------------------------------------------------------------- */
 
 const Reload = () => {
-    DisplayProduct();
     setUsername()
+    DisplayProduct();
     DisplyInvenotryValue();
     RenderProductsList();
     checkLowStock();
@@ -82,7 +82,7 @@ const DisplayProduct = () => {
     if (!AllProducts) {
         return;
     } else {
-        ProductsCount.textContent = AllProducts.length;
+        ProductsCount.innerHTML = `<count-up>${AllProducts.length}</count-up>`;
         let TotalStockProducts = 0;
         AllProducts.forEach((product) => {
             const totalStock = Number(product.stock);
@@ -99,8 +99,8 @@ const DisplyInvenotryValue = () => {
         totalInventoryValue += p.stock * p.buyPrice;
     });
 
-    document.getElementById("Inventory-value").innerText =
-        `₹ ${totalInventoryValue.toLocaleString()}`;
+    document.getElementById("Inventory-value").innerHTML =
+        `<count-up>${totalInventoryValue.toLocaleString()}</count-up>`;
 
     if (totalInventoryValue > 100000000) {
         InventoryStat.textContent = "Multi-Millionaire";
@@ -288,7 +288,7 @@ const checkLowStock = () => {
             StockCount += 1;
         }
     });
-    LowStockCount.textContent = StockCount;
+    LowStockCount.innerHTML = `<count-up>${StockCount}</count-up>`;
     LowStockStat.textContent = "Check Your Stock";
 };
 
@@ -300,7 +300,7 @@ const checkOutOfStock = () => {
             OutOfStockCount += 1;
         }
     });
-    OutOfStock.textContent = OutOfStockCount;
+    OutOfStock.innerHTML = `<count-up>${OutOfStockCount}</count-up>`;
     OutOfStockStat.textContent = "Rerack Your Products";
 };
 
@@ -470,3 +470,4 @@ const renderLowStockChart = () => {
         }
     });
 };
+

@@ -152,11 +152,11 @@ products.forEach(p => {
     else if (p.stock <= 10) lowStock++;
 });
 
-document.getElementById("totalInventoryValue").innerText =
-    `₹ ${totalInventoryValue.toLocaleString()}`;
+document.getElementById("totalInventoryValue").innerHTML =
+    `₹<count-up> ${totalInventoryValue.toLocaleString()}</count-up>`;
 
-document.getElementById("lowStockCount").innerText = lowStock;
-document.getElementById("outOfStockCount").innerText = outOfStock;
+document.getElementById("lowStockCount").innerHTML = `<count-up>${lowStock}</count-up>`;
+document.getElementById("outOfStockCount").innerHTML = `<count-up>${outOfStock}</count-up>`;
 
 /* ---------------- STOCK HEALTH CHART ---------------- */
 

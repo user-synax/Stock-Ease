@@ -141,6 +141,7 @@ let editingProductId = null;
 document.querySelector(".stock-table tbody").addEventListener("click", (e) => {
     if (e.target.classList.contains("edit-product-btn")) {
         const productId = e.target.dataset.id;
+
         const products = JSON.parse(localStorage.getItem("products")) || [];
 
         const product = products.find(p => p.id === productId);
