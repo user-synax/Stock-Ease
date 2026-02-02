@@ -471,3 +471,36 @@ const renderLowStockChart = () => {
     });
 };
 
+const showLowStockAert = (() => {
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    let StockCount = 0;
+    products.map((product) => {
+        if (product.stock <= 5) {
+            StockCount += 1;
+        }
+    });
+    Snackbar.show({
+        text: `[ ${StockCount} ] Items getting out of stock soon...`,
+        showAction: false,
+        pos: "bottom-right",
+        backgroundColor: `#d5e400`,
+        textColor: 'black'
+    });
+})()
+
+const showOutOfStockAert = (() => {
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    let OutOfStockCount = 0;
+    products.map((product) => {
+        if (product.stock == 0) {
+            OutOfStockCount += 1;
+        }
+    });
+    Snackbar.show({
+        text: `[ ${OutOfStockCount} ] Items are out of stock`,
+        showAction: false,
+        pos: "bottom-right",
+        backgroundColor: `#ef4444`,
+        textColor: 'black'
+    });
+})()

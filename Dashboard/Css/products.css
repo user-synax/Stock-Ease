@@ -973,3 +973,11 @@ textarea:focus {
     justify-content: space-between;
     align-items: center;
 }
+
+.edit-product-btn i{
+    pointer-events: none;
+}
+
+.delete-product-btn i{
+    pointer-events: none;
+}
