@@ -468,6 +468,7 @@ dialog::backdrop{
     border-radius: 16px;
     padding: 18px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 5px 8px rgba(255, 255, 255, 0.1), inset 0px -5px 8px black, 0px 0px 5px var(--bg-card);
 }
 
 .card h3 {
@@ -587,6 +588,7 @@ select:focus {
     background: var(--bg-card);
     padding: 20px;
     border-radius: 12px;
+    box-shadow: inset 0px 5px 8px rgba(255, 255, 255, 0.1), inset 0px -5px 8px black, 0px 0px 5px var(--bg-card);
 }
 
 .recent-orders h2 {

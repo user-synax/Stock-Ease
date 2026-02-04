@@ -1,77 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="google-site-verification"
+            content="9CeXRWsQOlNGadNzg5BivNP_nHYi66QoFftPXPEY0gA"
+        />
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                          Google Search Console                          -->
+        <!-- ----------------------------------------------------------------------- -->
+        <meta
+            name="google-site-verification"
+            content="9CeXRWsQOlNGadNzg5BivNP_nHYi66QoFftPXPEY0gA"
+        />
+        <title>Stock Ease - Dashboard</title>
+        <link
+            rel="shortcut icon"
+            href="/Assets/images/logo.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/Libs/SnackBar-master/dist/snackbar.min.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="9CeXRWsQOlNGadNzg5BivNP_nHYi66QoFftPXPEY0gA" />
-    <!-- ----------------------------------------------------------------------- -->
-    <!--                          Google Search Console                          -->
-    <!-- ----------------------------------------------------------------------- -->
-    <meta name="google-site-verification" content="9CeXRWsQOlNGadNzg5BivNP_nHYi66QoFftPXPEY0gA" />
-    <title>Stock Ease - Dashboard</title>
-    <link rel="shortcut icon" href="/Assets/images/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <link rel="stylesheet" href="/Libs/SnackBar-master/dist/snackbar.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+    <body>
+        <!-- ------------------------------- Overlay ------------------------------- -->
+        <div class="overlay" id="overlay"></div>
 
-<body>
-    <!-- ------------------------------- Overlay ------------------------------- -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- ------------------------------- Sidebar ------------------------------- -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2><i class="fa-solid fa-cubes"></i> Stock Ease</h2>
-            <button class="collapse-btn" id="collapseBtn">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-            </button>
-        </div>
-        <nav class="sidebar-menu">
-            <a href="#" class="menu-item active" data-tooltip="Dashboard">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
-                    </path>
-                </svg>
-                <span>Dashboard</span>
-            </a>
-            <a href="Html/products.html" class="menu-item" data-tooltip="Products">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                </svg>
-                <span>Products</span>
-            </a>
-            <a href="./Html/analytics.html" class="menu-item" data-tooltip="Analytics">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                    </path>
-                </svg>
-                <span>Analytics</span>
-            </a>
-            <a href="./Html/orders.html" class="menu-item" data-tooltip="Orders">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
-                    </path>
-                </svg>
-                <span>Orders</span>
-            </a>
-            <a href="./Html/customers.html" class="menu-item" data-tooltip="Customers">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
-                    </path>
-                </svg>
-                <span>Customers</span>
-            </a>
-            <!-- <a href="#" class="menu-item" data-tooltip="Settings">
+        <!-- ------------------------------- Sidebar ------------------------------- -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-cubes"></i> Stock Ease</h2>
+                <button class="collapse-btn" id="collapseBtn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M15 19l-7-7 7-7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-tooltip="Dashboard">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                        ></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a
+                    href="Html/products.html"
+                    class="menu-item"
+                    data-tooltip="Products"
+                >
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                        ></path>
+                    </svg>
+                    <span>Products</span>
+                </a>
+                <a
+                    href="./Html/analytics.html"
+                    class="menu-item"
+                    data-tooltip="Analytics"
+                >
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        ></path>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+                <a
+                    href="./Html/orders.html"
+                    class="menu-item"
+                    data-tooltip="Orders"
+                >
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                        ></path>
+                    </svg>
+                    <span>Orders</span>
+                </a>
+                <a
+                    href="./Html/customers.html"
+                    class="menu-item"
+                    data-tooltip="Customers"
+                >
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                        ></path>
+                    </svg>
+                    <span>Customers</span>
+                </a>
+                <!-- <a href="#" class="menu-item" data-tooltip="Settings">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
@@ -81,195 +133,270 @@
                 </svg>
                 <span>Settings</span>
             </a> -->
-            <a class="menu-item" id="logout-tab" data-tooltip="Settings">
-                <i class="fa-solid fa-arrow-right-from-bracket" style="transform: rotate(180deg);"></i> &nbsp; &nbsp;
-                <span>Log Out</span>
-            </a>
-        </nav>
-    </aside>
+                <a class="menu-item" id="logout-tab" data-tooltip="Settings">
+                    <i
+                        class="fa-solid fa-arrow-right-from-bracket"
+                        style="transform: rotate(180deg)"
+                    ></i>
+                    &nbsp; &nbsp;
+                    <span>Log Out</span>
+                </a>
+            </nav>
+        </aside>
 
-    <!-- ---------------------------- Main Content ----------------------------- -->
-    <main class="main-content" id="mainContent">
-        <!-- ------------------------------- Header -------------------------------- -->
-        <header class="header">
-            <div class="header-left">
-                <button class="menu-toggle" id="menuToggle">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+        <!-- ---------------------------- Main Content ----------------------------- -->
+        <main class="main-content" id="mainContent">
+            <!-- ------------------------------- Header -------------------------------- -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <svg
+                            width="24"
+                            height="24"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            ></path>
+                        </svg>
+                    </button>
+                    <div class="search-box">
+                        <svg
+                            width="20"
+                            height="20"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            ></path>
+                        </svg>
+                        <input
+                            type="text"
+                            id="searchProduct"
+                            placeholder="Search products, orders..."
+                        />
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="date-time">
+                        <h2 id="dateAndTime"></h2>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Preview Grid -->
+            <div class="content">
+                <h1 class="page-title">
+                    Welcome, <span id="user-welcome"></span>
+                </h1>
+                <button class="add-product-button" id="add-product-button">
+                    Add New Product
                 </button>
-                <div class="search-box">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                    <input type="text" id="searchProduct" placeholder="Search products, orders...">
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-label">Products </span>
+                        </div>
+                        <div class="stat-value" id="products-count">0</div>
+                        <div class="stat-change positive" id="product-stat">
+                            Total : [ 0 ]
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-label">Inventory Value</span>
+                        </div>
+                        <div class="stat-value" id="Inventory-value">₹0</div>
+                        <div class="stat-change positive" id="Inventory-stat">
+                            Please add products to Calculate
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-label">Low Stock Items</span>
+                        </div>
+                        <div class="stat-value" id="low-stock-count">0</div>
+                        <div class="stat-change positive" id="low-stock-stat">
+                            None
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-label">Out of Stock</span>
+                        </div>
+                        <div class="stat-value" id="out-of-stock-alert">0</div>
+                        <div
+                            class="stat-change positive"
+                            id="out-of-stock-stat"
+                        >
+                            None
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="header-right">
-                <div class="date-time">
-                    <h2 id="dateAndTime"></h2>
+
+            <section class="stock-section">
+                <h2>Recent Products</h2>
+
+                <div class="table-wrapper">
+                    <table class="stock-table">
+                        <thead>
+                            <tr>
+                                <th>Product Id</th>
+                                <th>Product Name</th>
+                                <th>Product Category</th>
+                                <th>Stock Qty</th>
+                                <th>Added At</th>
+                                <th>Margin / PDT</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-list-body">
+                            <tr>
+                                <h5 id="list-status">
+                                    No Product Found Add New Product
+                                </h5>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </header>
-
-        <!-- Quick Preview Grid -->
-        <div class="content">
-            <h1 class="page-title" id="user-welcome">Overview</h1>
-            <button class="add-product-button" id="add-product-button">Add New Product</button>
-
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Products</span>
-                    </div>
-                    <div class="stat-value" id="products-count">0</div>
-                    <div class="stat-change positive" id="product-stat">Total : [ 0 ]</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Inventory Value</span>
-                    </div>
-                    <div class="stat-value" id="Inventory-value">₹0</div>
-                    <div class="stat-change positive" id="Inventory-stat">Please add products to Calculate</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Low Stock Items</span>
-                    </div>
-                    <div class="stat-value" id="low-stock-count">0</div>
-                    <div class="stat-change positive" id="low-stock-stat">None</div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-card-header">
-                        <span class="stat-label">Out of Stock</span>
-                    </div>
-                    <div class="stat-value" id="out-of-stock-alert">0</div>
-                    <div class="stat-change positive" id="out-of-stock-stat">None</div>
-                </div>
-            </div>
-        </div>
-
-        <section class="stock-section">
-            <h2>Recent Products</h2>
-
-            <div class="table-wrapper">
-                <table class="stock-table">
-                    <thead>
-                        <tr>
-                            <th>Product Id</th>
-                            <th>Product Name</th>
-                            <th>Product Category</th>
-                            <th>Stock Qty</th>
-                            <th>Added At</th>
-                            <th>Margin / PDT</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="product-list-body">
-                        <tr>
-                            <h5 id="list-status">No Product Found Add New Product</h5>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-
-        <main class="dashboard-wrapper">
-            <section class="chart-card chart-card-sales">
-                <h3 class="chart-title">Products Overview</h3>
-                <canvas id="salesChart"></canvas>
             </section>
 
-            <section class="chart-card chart-card-visitors">
-                <h3 class="chart-title">Low Stock Category</h3>
-                <canvas id="lowStockChart"></canvas>
-            </section>
+            <main class="dashboard-wrapper">
+                <section class="chart-card chart-card-sales">
+                    <h3 class="chart-title">Products Overview</h3>
+                    <canvas id="salesChart"></canvas>
+                </section>
+
+                <section class="chart-card chart-card-visitors">
+                    <h3 class="chart-title">Low Stock Category</h3>
+                    <canvas id="lowStockChart"></canvas>
+                </section>
+            </main>
         </main>
 
-    </main>
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                                 Dialogs                                 -->
+        <!-- ----------------------------------------------------------------------- -->
 
+        <!-- ------------------------------- LogOut -------------------------------- -->
+        <dialog id="log_out">
+            <h1>Are you Sure?</h1>
+            <div class="buttons">
+                <button class="yes" id="success-logout">Yes</button>
+                <button class="discard" id="discard-logout">Discard</button>
+            </div>
+        </dialog>
 
-    <!-- ----------------------------------------------------------------------- -->
-    <!--                                 Dialogs                                 -->
-    <!-- ----------------------------------------------------------------------- -->
-
-    <!-- ------------------------------- LogOut -------------------------------- -->
-    <dialog id="log_out">
-        <h1>Are you Sure?</h1>
-        <div class="buttons">
-            <button class="yes" id="success-logout">Yes</button>
-            <button class="discard" id="discard-logout">Discard</button>
-        </div>
-    </dialog>
-
-
-    <!-- ----------------------------- Add Product ----------------------------- -->
-    <dialog id="add_product">
-        <div class="icon" id="closeAddProduct">
+        <!-- ----------------------------- Add Product ----------------------------- -->
+        <dialog id="add_product">
+            <!-- <div class="icon" id="closeAddProduct">
             <i class="fa-solid fa-circle-xmark"></i>
-        </div>
+        </div> -->
 
-        <div class="form" id="product-form">
-            <h2>Add New Product</h2>
-
-            <div class="input-group">
-                <label for="product-name">Product Name</label>
-                <input type="text" id="product-name" placeholder="e.g. Wireless Headphones" autocomplete="off">
-            </div>
-
-            <div class="input-group">
-                <label for="product-category">Category</label>
-                <select id="product-category">
-                    <option value="">Select a category</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Clothing">Clothing</option>
-                    <option value="Home">Home</option>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Stationary">Stationary</option>
-                    <option value="Accessories">Accessories</option>
-                </select>
-            </div>
-
-            <div class="input-row">
-                <div class="input-group">
-                    <label for="product-buy-price">Buy Price (₹)</label>
-                    <input type="number" id="product-buy-price" step="0.01" placeholder="0.00">
+            <div class="form" id="product-form">
+                <div class="icon" id="closeAddProduct">
+                    <i class="fa-solid fa-circle-xmark"></i>
                 </div>
-            </div>
+                <h2>Add New Product</h2>
 
-            <div class="input-row">
                 <div class="input-group">
-                    <label for="product-price">Sell Price (₹)</label>
-                    <input type="number" id="product-price" step="1" placeholder="0.00">
+                    <label for="product-name">Product Name</label>
+                    <input
+                        type="text"
+                        id="product-name"
+                        placeholder="e.g. Wireless Headphones"
+                        autocomplete="off"
+                    />
                 </div>
+
                 <div class="input-group">
-                    <label for="product-stock">Stock Quantity</label>
-                    <input type="number" id="product-stock" placeholder="0">
+                    <label for="product-category">Category</label>
+                    <select id="product-category">
+                        <option value="">Select a category</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Home">Home</option>
+                        <option value="Kitchen">Kitchen</option>
+                        <option value="Stationary">Stationary</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
                 </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="product-buy-price">Buy Price (₹)</label>
+                        <input
+                            type="number"
+                            id="product-buy-price"
+                            step="0.01"
+                            placeholder="0.00"
+                        />
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="product-price">Sell Price (₹)</label>
+                        <input
+                            type="number"
+                            id="product-price"
+                            step="1"
+                            placeholder="0.00"
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="product-stock">Stock Quantity</label>
+                        <input
+                            type="number"
+                            id="product-stock"
+                            placeholder="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="product-desc">Description</label>
+                    <textarea
+                        id="product-desc"
+                        rows="4"
+                        placeholder="Describe the product features..."
+                    ></textarea>
+                </div>
+
+                <button
+                    type="button"
+                    class="submit-btn"
+                    id="_add_product_button_"
+                >
+                    Add Product
+                </button>
             </div>
+        </dialog>
 
-            <div class="input-group">
-                <label for="product-desc">Description</label>
-                <textarea id="product-desc" rows="4" placeholder="Describe the product features..."></textarea>
-            </div>
-
-            <button type="button" class="submit-btn" id="_add_product_button_">Add Product</button>
-        </div>
-    </dialog>
-
-    <script type="module" src="https://cdn.jsdelivr.net/gh/lekoala/formidable-elements@master/dist/count-up.min.js"></script>
-    <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-    <script src="./JavaScript/sidebar.js"></script>
-    <script src="./JavaScript/utility.js"></script>
-    <script src="./JavaScript/script.js"></script>
-</body>
-
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/gh/lekoala/formidable-elements@master/dist/count-up.min.js"
+        ></script>
+        <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+        <script src="./JavaScript/sidebar.js"></script>
+        <script src="./JavaScript/utility.js"></script>
+        <script src="./JavaScript/script.js"></script>
+    </body>
 </html>

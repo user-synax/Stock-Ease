@@ -72,7 +72,7 @@ const setUsername = () => {
     if (!UserDetails) {
         userWelcomeText.textContent = `Dashboard Overview`
     } else {
-        userWelcomeText.textContent = `Welcome, ${UserDetails.Username}`
+        userWelcomeText.textContent = `${UserDetails.Username}`
     }
 }
 
@@ -479,6 +479,7 @@ const showLowStockAert = (() => {
             StockCount += 1;
         }
     });
+    if (!StockCount) return
     Snackbar.show({
         text: `[ ${StockCount} ] Items getting out of stock soon...`,
         showAction: false,
@@ -496,6 +497,7 @@ const showOutOfStockAert = (() => {
             OutOfStockCount += 1;
         }
     });
+    if (!OutOfStockCount) return
     Snackbar.show({
         text: `[ ${OutOfStockCount} ] Items are out of stock`,
         showAction: false,

@@ -707,6 +707,7 @@ textarea:focus {
     border-radius: 14px;
     color: #e5e7eb;
     font-family: "Inter", sans-serif;
+    box-shadow: inset 0px 5px 8px rgba(255, 255, 255, 0.1), inset 0px -5px 8px black, 0px 0px 5px var(--bg-card);
 }
 
 .stock-section h2 {
