@@ -74,12 +74,6 @@ Tl.from("nav", {
     filter: `blur(20px)`,
 });
 
-// Tl.from(".hero-section", {
-//     filter: `blur(10px)`,
-//     opacity: 0,
-//     duration: 1,
-// });
-
 // Text Animations
 
 let split = SplitText.create(".split", { type: "words, chars" });
@@ -129,5 +123,5 @@ gsap.from(".about-section", {
         end: "bottom bottom",
         scrub: 1,
     },
-    y: -100
+    y: -100,
 });
