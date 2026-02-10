@@ -82,7 +82,7 @@
             <div class="buttons">
                 <button class="cta-button" onclick="location.href='./Auth/Sign-up/signup.html'">Get
                     Started</button>
-                <button class="learn-more-button">Learn More</button>
+                <button class="learn-more-button" onclick="location.href='../Auth/Login/login.html'">Sign In</button>
             </div>
         </div>
     </main>
@@ -98,7 +98,7 @@
                 </div>
 
                 <div class="about-content">
-                    <span class="subtitle">...</span>
+                    <span class="subtitle"><i class="fa-solid fa-circle-info"></i></span>
                     <h2>What Is <br><span class="highlight">Stock Ease?</span></h2>
                     <p>
                         Stock Ease is a local inventory management web application that helps you manage products, track
@@ -131,7 +131,7 @@
             <div class="solution-header">
                 <span class="subtitle">Why Stock Ease?</span>
                 <h2>Stop struggling, <span class="highlight">start growing.</span></h2>
-                <p>Business manage karna mushkil nahi hona chahiye. See how we fix your daily headaches.</p>
+                <p>Managing a business shouldn't be difficult. See how we can fix your daily headaches.</p>
             </div>
 
             <div class="solution-grid">
@@ -140,15 +140,15 @@
                     <ul class="solution-list">
                         <li>
                             <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
-                            <p>Manual stock tracking (Register aur Pen ka chakkar)</p>
+                            <p>Manual stock tracking (using registers and pens)</p>
                         </li>
                         <li>
                             <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
-                            <p>Stock khatam hone ka pata late chalta hai</p>
+                            <p>Stock shortages are discovered late</p>
                         </li>
                         <li>
                             <span class="icon"><i class="fa-solid fa-circle-xmark"></i></span>
-                            <p>Profit calculation confusing hoti hai</p>
+                            <p>Profit calculations are confusing</p>
                         </li>
                     </ul>
                 </div>
@@ -254,7 +254,7 @@
                             <span class="method-icon"><i class="fa-solid fa-phone"></i></span>
                             <div>
                                 <strong>WhatsApp Support</strong>
-                                <p>Adding Soon...</p>
+                                <p><a href="https://api.whatsapp.com/send?phone=918826343179&text=Hey%2C%20i%20want%20some%20help.%20regarding%20%5B%20Stock%20Ease%20%5D" target="_blank">Click to Contact</a></p>
                             </div>
                         </div>
                     </div>
@@ -300,10 +300,10 @@
                         Alvida manual registers, welcome to the future.
                     </p>
                     <div class="social-links">
-                        <a class="social-icon" id="facebook"><i class="fa-brands fa-facebook"></i></a>
-                        <a class="social-icon" id="telegram"><i class="fa-brands fa-telegram"></i></a>
-                        <a class="social-icon" id="instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a class="social-icon" id="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a class="social-icon" id="whatsapp" href="https://wa.me/+918826343179" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a class="social-icon" id="telegram" href="https://t.me/user_synax" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                        <a class="social-icon" id="instagram" href="https://instagram.com/user.__.ayush" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="social-icon" id="github" href="https://github.com/user-synax" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
 
@@ -321,10 +321,12 @@
                     <h4>Support</h4>
                     <ul>
                         <li><a
-                                onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">Help
+                                href="https://api.whatsapp.com/send?phone=918826343179&text=Hey%2C%20i%20want%20some%20help.%20regarding%20%5B%20Stock%20Ease%20%5D"
+                                target="_blank">Help
                                 Center</a></li>
                         <li><a
-                                onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">WhatsApp
+                                href="https://api.whatsapp.com/send?phone=918826343179&text=Hey%2C%20i%20want%20some%20help.%20regarding%20%5B%20Stock%20Ease%20%5D"
+                                target="_blank">WhatsApp
                                 Support</a></li>
                         <li><a
                                 onclick="Snackbar.show({text: 'Adding Soon...', showAction: false, backgroundColor: '#3b82f6', textColor: 'white'})">Privacy
@@ -357,7 +359,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
     <script src="/Libs/SnackBar-master/dist/snackbar.min.js"></script>
-    <script src="/JavaScript/script.js"></script>
+    <script src="/JavaScript/script.js" defer></script>
 </body>
-
 </html>

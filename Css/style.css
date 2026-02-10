@@ -53,7 +53,7 @@ html {
     z-index: 9999;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    box-shadow: 0px 0px 20px var(--primary);
+    box-shadow: 0px 0px 10px var(--primary);
 }
 
 @media (max-width: 700px) {
@@ -164,7 +164,7 @@ body:has(.footer-logo h1:hover) .cursor {
 
     --bg-dark: #0a0a0b;
     --bg-card: #161618;
-    --accent: #3b82f6; /* Electric Blue */
+    --accent: #3b82f6;
     --text-main: #e2e8f0;
     --text-muted: #94a3b8;
     --white: #ffffff;
@@ -479,6 +479,7 @@ nav {
     color: var(--text-main);
     padding: 80px 20px;
     margin-bottom: 30px;
+    z-index: -2;
 }
 
 .container {
@@ -493,12 +494,12 @@ nav {
     align-items: center;
 }
 
-/* Image Styling */
 .about-image {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .about-image img {
@@ -513,7 +514,6 @@ nav {
     filter: grayscale(0%);
 }
 
-/* Text Styling */
 .subtitle {
     color: var(--accent);
     text-transform: uppercase;
@@ -544,7 +544,6 @@ p {
     margin-bottom: 30px;
 }
 
-/* Stats Row */
 .stats {
     display: flex;
     gap: 40px;
@@ -563,7 +562,6 @@ p {
     color: var(--text-muted);
 }
 
-/* Button */
 .btn-primary {
     background-color: var(--primary);
     color: var(--primary-font);
@@ -584,7 +582,6 @@ p {
         inset 0px 5px 8px var(--primary-font);
 }
 
-/* Responsive Desktop Layout */
 @media (min-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr 1fr;
@@ -621,7 +618,6 @@ p {
     margin: 0 auto;
 }
 
-/* Common Card Styling */
 .solution-card {
     background: var(--bg-card);
     padding: 40px;
@@ -636,13 +632,11 @@ p {
     font-size: 1.5rem;
 }
 
-/* Problem Specific */
 .problem {
     border-left: 4px solid var(--accent-red);
     opacity: 0.8;
 }
 
-/* Solution Specific */
 .solution {
     border: 2px solid var(--accent-green);
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
@@ -659,7 +653,6 @@ p {
     border-radius: 20px;
 }
 
-/* List Styling */
 .solution-list {
     list-style: none;
     padding: 0;
@@ -685,14 +678,12 @@ p {
     margin-top: 50px;
 }
 
-/* Desktop Layout */
 @media (min-width: 850px) {
     .solution-grid {
         grid-template-columns: 1fr 1fr;
         align-items: stretch;
     }
 
-    /* Adds an arrow effect between cards on desktop */
     .problem::after {
         content: "→";
         position: absolute;
@@ -1128,4 +1119,8 @@ p {
     .footer-logo {
         display: none;
     }
+}
+
+.social-links a:hover{
+    cursor: pointer;
 }

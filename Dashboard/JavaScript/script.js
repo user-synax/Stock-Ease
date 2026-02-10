@@ -100,7 +100,7 @@ const DisplyInvenotryValue = () => {
     });
 
     document.getElementById("Inventory-value").innerHTML =
-        `<count-up>${totalInventoryValue.toLocaleString()}</count-up>`;
+        `₹<count-up>${totalInventoryValue.toLocaleString()}</count-up>`;
 
     if (totalInventoryValue > 100000000) {
         InventoryStat.textContent = "Multi-Millionaire";
@@ -247,11 +247,11 @@ const RenderProductsList = () => {
     const products = JSON.parse(localStorage.getItem("products")) || [];
     const getStockStatus = (stock) => {
         if (stock > 10) {
-            return { text: "In Stock", class: "in-stock" };
+            return { text: `<i class="fa-solid fa-circle-check"></i>`, class: "in-stock" };
         } else if (stock > 0) {
-            return { text: "Stock Soon", class: "low-stock" };
+            return { text: `<i class="fa-solid fa-circle-exclamation"></i>`, class: "low-stock" };
         } else {
-            return { text: "Out of Stock", class: "out-stock" };
+            return { text: `<i class="fa-solid fa-xmark"></i>`, class: "out-stock" };
         }
     };
     tableBody.innerHTML = products

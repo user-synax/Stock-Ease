@@ -32,8 +32,8 @@ tippy("#magic-icon", {
     theme: "material",
 });
 
-tippy("#facebook", {
-    content: "Facebook",
+tippy("#whatsapp", {
+    content: "Whatsapp",
     animation: "scale",
     followCursor: true,
 });
@@ -52,8 +52,8 @@ tippy("#instagram", {
     theme: "material",
 });
 
-tippy("#linkedin", {
-    content: "Linked-in",
+tippy("#github", {
+    content: "GitHub",
     animation: "scale",
     followCursor: true,
     theme: "material",
@@ -79,10 +79,11 @@ Tl.from("nav", {
 let split = SplitText.create(".split", { type: "words, chars" });
 
 gsap.from(split.chars, {
-    duration: 1,
+    duration: 2,
     y: 100,
     autoAlpha: 0,
     stagger: 0.05,
+
 });
 
 SplitText.create(".hero-section .text", {
@@ -91,10 +92,11 @@ SplitText.create(".hero-section .text", {
     autoSplit: true,
     onSplit(self) {
         return gsap.from(self.words, {
-            duration: 1,
+            duration: 1.8,
             y: 100,
             autoAlpha: 0,
             stagger: 0.05,
+            ease: 'power4.inOut'
         });
     },
 });
@@ -106,22 +108,10 @@ SplitText.create(".hero-section p", {
     onSplit(self) {
         return gsap.from(self.words, {
             delay: 0.5,
-            duration: 1,
-            filter: `blur(10px)`,
+            duration: 1.5,
+            filter: `blur(100px)`,
             autoAlpha: 0,
             stagger: 0.05,
         });
     },
-});
-
-// OnScroll Animations
-
-gsap.from(".about-section", {
-    scrollTrigger: {
-        trigger: ".about-section",
-        start: "top 50%",
-        end: "bottom bottom",
-        scrub: 1,
-    },
-    y: -100,
 });

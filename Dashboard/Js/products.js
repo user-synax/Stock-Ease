@@ -44,11 +44,11 @@ const RenderProductsList = () => {
 
     const getStockStatus = (stock) => {
         if (stock > 10) {
-            return { text: "In Stock", class: "in-stock" };
+            return { text: `<i class="fa-solid fa-circle-check"></i>`, class: "in-stock" };
         } else if (stock > 0) {
-            return { text: "Stock Soon", class: "low-stock" };
+            return { text: `<i class="fa-solid fa-circle-exclamation"></i>`, class: "low-stock" };
         } else {
-            return { text: "Out of Stock", class: "out-stock" };
+            return { text: `<i class="fa-solid fa-xmark"></i>`, class: "out-stock" };
         }
     };
     // ListStatus.style.display = "none";
