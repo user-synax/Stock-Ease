@@ -6,9 +6,7 @@
 </p>
 
 <p align="center">
-  🚀 <b>Beta Live:</b> <a href="https://stockease-beta.netlify.app" target="_blank">stockease-beta.netlify.app</a>  
-  <br/>
-  🎯 <b>Final Version (Launched 4 Feb):</b> <a href="https://stock-ease.netlify.app" target="_blank">stock-ease.netlify.app</a>
+  🎯 <b>Live: </b> <a href="https://stock-ease.netlify.app" target="_blank">stock-ease.netlify.app</a>
 </p>
 
 ---
